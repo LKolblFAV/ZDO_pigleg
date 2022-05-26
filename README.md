@@ -1,5 +1,5 @@
 # ZDO_pigleg
-recognition of surgery tools
+Recognition of surgery tools
 
 Semetrální práce z předmětu ZDO v roce 2022
 

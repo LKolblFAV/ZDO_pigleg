@@ -1,0 +1,17 @@
+numpy
+scipy
+scikit-image
+scikit-learn
+matplotlib
+pandas
+lxml
+zipfile
+xml
+math
+pickle
+json
+opencv-python
+glob
+os
+pylab
+imageio

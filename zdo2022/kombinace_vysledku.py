@@ -2,10 +2,7 @@
 
 
 # Nacteni trenovacich dat
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
+import os
 import zipfile
 import xml.etree.ElementTree as ET
 import skimage
@@ -51,4 +48,4 @@ for i in range(26):
           for n in range(len(soubory)):
             histogram[i][j][k][l][m] += vysledky[n][0][i][j][k][l][m] / celkemFramu
 # Vysledek ulozen v pickle formatu pro dalsi uziti
-pickle.dump([histogram, pohyby], open("vysledek.pckl", "ab"))
+pickle.dump([histogram, pohyby], open(os.join("..", "vysledek.pckl"), "ab"))

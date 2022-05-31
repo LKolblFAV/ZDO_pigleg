@@ -2,10 +2,6 @@
 
 
 # Nacteni trenovacich dat
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
 import zipfile
 import xml.etree.ElementTree as ET
 import skimage
@@ -62,17 +58,7 @@ def popisNeedleHolderu(obrazek, anotace, minulyObrazek):
 
   return RGB + [hrana, pohyb]
 
-""" Nacteni zip archivu pri spousteni z Google Colabu
-auth.authenticate_user()
-gauth = GoogleAuth()
-gauth.credentials = GoogleCredentials.get_application_default()
-drive = GoogleDrive(gauth)
 
-file_id = '1y5TDMsGVyfKG2A0PWZel0KbUvz121RcG'
-downloaded = drive.CreateFile({'id':file_id})
-downloaded.FetchMetadata(fetch_all=True)
-downloaded.GetContentFile(downloaded.metadata['title'])
-"""
 cisloSouboru = 226
 with zipfile.ZipFile(str(cisloSouboru) + ".zip", 'r') as zip_ref:
     zip_ref.extractall("data")

@@ -158,15 +158,21 @@ class InstrumentTracker():
             index5 = min(math.floor(popis[xy][4] * 10), 9)
 
             pstPopisu = max(histogram[index1][index2][index3][index4][index5], 1e-10)
-            """
-            ########################x
+           
+            
+            ##################################
+            # Ignorovani informace o hranach #
+            ##################################
+
             pstPopisu = 0
             #for index5 in range(len(histogram[0][0][0][0])):
             for index4 in range(len(histogram[0][0][0])):
                 pstPopisu += histogram[index1][index2][index3][index4][index5]
-            pstPopisu = max(pstPopisu, 1e-7)
-            ########################x
-            """
+            pstPopisu = max(pstPopisu, 1e-10)
+            
+            ##################################
+            
+
             cenyCile[-1][(xy[0], xy[1])] = np.log(pstPopisu)
 
           cenyCile[-1] = vyberNejlepsichCtverecku(cenyCile[-1])
@@ -201,7 +207,7 @@ class InstrumentTracker():
           ctverecky = [nejlepsiCtverecek] + ctverecky
 
         # Ulozeni anotaci
-        print("Ukládám anotace.")
+        print("\nUkládám anotace.\n")
         vysledneAnotace = {"filename": []}
         vysledneAnotace["frame_id"] = []
         vysledneAnotace["object_id"] = []
@@ -223,7 +229,7 @@ class InstrumentTracker():
             
             
         # Ulozeni anotovaneho videa
-        print("Ukládám výsledné video...")
+        print("Ukládám výsledné video...\n")
         if not os.path.exists("obrazky_upravene"):
             os.mkdir("obrazky_upravene")
       
